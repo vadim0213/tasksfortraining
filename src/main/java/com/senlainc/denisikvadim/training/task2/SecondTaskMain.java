@@ -1,9 +1,9 @@
 package com.senlainc.denisikvadim.training.task2;
 
 import com.senlainc.denisikvadim.training.AbstractMain;
-import com.senlainc.denisikvadim.training.IGenericMain; 
+import com.senlainc.denisikvadim.training.IGenericMain;
 import com.senlainc.denisikvadim.training.task2.numbercommonservice.INumberCommonService;
-import com.senlainc.denisikvadim.training.task2.numbercommonservice.implementation.NumberCommonService; 
+import com.senlainc.denisikvadim.training.task2.numbercommonservice.implementation.NumberCommonService;
 
 import java.util.Scanner;
 

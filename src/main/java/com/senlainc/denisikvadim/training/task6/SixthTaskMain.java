@@ -21,37 +21,42 @@ public class SixthTaskMain extends AbstractMain {
         run(sixthTaskMain);
     }
 
-    private void addItem(String firstInput, String secondInput, List<Item> items) {
+    private boolean addItem(String firstInput, String secondInput, List<Item> items) {
         try {
             int weight = Integer.parseInt(firstInput);
             int cost = Integer.parseInt(secondInput);
             items.add(new Item(weight, cost));
+            return true;
         } catch (NumberFormatException e) {
             System.err.println("Enter a correct value! Entered value must contain only digits and to be an integer");
+            return false;
         }
     }
 
     private Integer createItems(List<Item> items) {
-        int i = 1;
+        Integer i = 1;
         while (true) {
-            System.out.println("Enter [" + i + "]st(th) item's weight:   [type 'stop' to stop creating items | type 'return' to stop this task]");
+            System.out.println("Enter [" + i + "]st item's weight:   [type 'stop' to stop creating items | type 'return' to stop this task]");
             String firstInput = scanner.nextLine();
             if (firstInput.equals("stop")) {
+                i--;
                 break;
             }
             if (firstInput.equals("return")) {
                 return null;
             }
-            System.out.println("Enter [" + i + "]st(th) item's cost:   [type 'stop' to stop creating items | type 'return' to stop this task]");
+            System.out.println("Enter [" + i + "]st item's cost:   [type 'stop' to stop creating items | type 'return' to stop this task]");
             String secondInput = scanner.nextLine();
             if (secondInput.equals("stop")) {
+                i--;
                 break;
             }
             if (secondInput.equals("return")) {
                 return null;
             }
-            addItem(firstInput, secondInput, items);
-            i++;
+            if (addItem(firstInput, secondInput, items)) {
+                i++;
+            }
         }
         return i;
     }
@@ -68,6 +73,7 @@ public class SixthTaskMain extends AbstractMain {
             System.out.println("You've created [" + itemsSize + "] items: \n" + items);
             System.out.println("Enter max weight you want your backpack to handle:");
             int backpackCapacity = scanner.nextInt();
+            scanner.nextLine();
             Backpack backpack = new Backpack(backpackCapacity);
             sixthTask.loadBackpack(backpack, items);
             System.out.println("Backpack was successfully filled up! Max capacity is ["

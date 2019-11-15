@@ -6,6 +6,9 @@ import com.senlainc.denisikvadim.training.task6.entity.Item;
 
 import java.util.List;
 
+/**
+ * Created by earthofmarble on Nov, 2019
+ */
 
 public class BackpackManager implements IBackpackManager {
 
@@ -52,9 +55,11 @@ public class BackpackManager implements IBackpackManager {
     }
 
     private void setBackpackLoad(Backpack backpack, List<Item> backpackItems) {
+        int load = backpack.getLoad();
         for (Item item : backpackItems) {
-            backpack.setLoad(backpack.getLoad() + item.getWeight());
+            load+=item.getWeight();
         }
+        backpack.setLoad(load);
     }
 
     public void loadBackpack(Backpack backpack, List<Item> items) {
@@ -62,7 +67,7 @@ public class BackpackManager implements IBackpackManager {
             int backpackCapacity = backpack.getCapacity();
             int[][] matrix = initializeMatrix(items, backpackCapacity);
             fillMatrix(matrix, backpackCapacity, items);
-            if (matrix[0].length > 0) {
+            if (matrix[0].length == 0) {
                 return;
             }
             List<Item> backpackItems = backpack.getItems();

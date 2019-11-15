@@ -5,6 +5,9 @@ import com.senlainc.denisikvadim.training.task6.entity.Item;
 
 import java.util.List;
 
+/**
+ * Created by earthofmarble on Nov, 2019
+ */
 
 public interface IBackpackManager {
 

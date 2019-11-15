@@ -1,4 +1,4 @@
-package com.senlainc.denisikvadim.training.task1; 
+package com.senlainc.denisikvadim.training.task1;
 
 import com.senlainc.denisikvadim.training.AbstractMain;
 import com.senlainc.denisikvadim.training.IGenericMain;
@@ -34,7 +34,7 @@ public class FirstTaskMain extends AbstractMain {
             String input = scanner.nextLine();
             if (input.equals("return")) {
                 return;
-            } 
+            }
             System.out.println(getResult(input));
         }
     }

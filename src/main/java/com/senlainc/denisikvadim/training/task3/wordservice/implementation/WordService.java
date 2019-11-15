@@ -7,6 +7,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Created by earthofmarble on Nov, 2019
+ */
 
 public class WordService implements IWordService {
 

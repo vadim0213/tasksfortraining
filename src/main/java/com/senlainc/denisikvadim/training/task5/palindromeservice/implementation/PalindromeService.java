@@ -5,6 +5,9 @@ import com.senlainc.denisikvadim.training.task5.palindromeservice.IPalindromeSer
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Created by earthofmarble on Nov, 2019
+ */
 
 public class PalindromeService implements IPalindromeService {
 
